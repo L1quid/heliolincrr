@@ -12,8 +12,8 @@ The 2018 Holman implementation clusters in a 2D angular phase space while the 20
 ## So what's different about HeliolincRR?
 
 There are three noteworthy conceptual differences in HeliolincRR:
-1. HeliolincRR uses ***two*** reference epochs and the two position vectors at those epochs as the clustering phase space. ([why would you do that?](https://www.benengebreth.org/dynamic-sky/heliolinc-rr/))
-2. HeliolincRR attempts to find clusters centered around each propagated tracklet (which allows for overlapping clusters and fewer hypothesis tests) rather than finding mutually exclusive clusters in the phase space. ([tell me more]())
+1. HeliolincRR uses ***two*** reference epochs and the two position vectors at those epochs as the clustering phase space.  This fully specifies the orbit of an object and avoids the mixed units problem of position and velocity in phase space. ([more information here](https://www.benengebreth.org/dynamic-sky/heliolinc-rr/))
+2. HeliolincRR attempts to find clusters centered around each propagated tracklet (which allows for overlapping clusters and fewer hypothesis tests) rather than finding mutually exclusive clusters in the phase space. ([here's a visual explanation]())
 3. HeliolincRR uses a [fast Lambert solver](https://arxiv.org/abs/1403.2705) for orbit estimation from n=2 sized tracklets. ([how does that work?]())
 
 The first two have substantially improved object recovery in my testing.  The 3rd is mostly about convenience and ease of implementation.  **Run on a two week subset of DP0.3 data, HeliolincRR recovers 99.26% of MBAs and 99.79% of TNOs as pure linkages.**
@@ -48,3 +48,5 @@ Contributors and collaborators:
 - [Ari Heinze](https://astro.washington.edu/people/aren-heinze)
 
 HeliolincRR was developed by Ben Engebreth, but would not have been possible without the feedback and support of Siegfried Eggl and Ari Heinze.  Siegfried and Ari did not, however, contribute any errors that may be present.  All errors in this work belong to Ben Engebreth alone.
+
+## Footnotes
