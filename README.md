@@ -12,7 +12,39 @@ The 2018 Holman implementation clusters in a 2D angular phase space while the 20
 ## So what's different about HeliolincRR?
 
 There are three noteworthy conceptual differences in HeliolincRR:
-1. HeliolincRR uses **two** reference epochs and the two position vectors at those epochs as the clustering phase space ([why?](https://www.benengebreth.org/dynamic-sky/heliolinc-rr/))
-2. HeliolincRR attempts to find clusters centered around each propagated tracklet (which allows for overlapping clusters) rather than finding mutually exclusive clusters in the phase space. ([tell me more]()]
-3. HeliolincRR uses a [fast Lambert solver]() for orbit estimation from n=2 sized tracklets. ([how's that work?]()]
+1. HeliolincRR uses ***two*** reference epochs and the two position vectors at those epochs as the clustering phase space ([why would you do that?](https://www.benengebreth.org/dynamic-sky/heliolinc-rr/))
+2. HeliolincRR attempts to find clusters centered around each propagated tracklet (which allows for overlapping clusters) rather than finding mutually exclusive clusters in the phase space. ([tell me more]())
+3. HeliolincRR uses a [fast Lambert solver](https://arxiv.org/abs/1403.2705) for orbit estimation from n=2 sized tracklets. ([how does that work?]()]
 
+The first two differences have substantially improved object recovery in my testing.  The 3rd difference is mostly about convenience and ease of implementation.  **Run on a two week subset of DP0.3 data, HeliolincRR recovers 99.26% of MBAs and 99.79% of TNOs as pure linkages.**
+
+## Installation
+
+While HeliolincRR is a generalized implementation for any observer at any location, this initial release was designed to work "out of the box" with the [Vera C. Rubin](https://rubinobservatory.org/) telescope's [DP0.3 simulation data](https://dp0-3.lsst.io/index.html) on the Rubin Science Platform (RSP).  As such, the example code in this repository currently requires access to the RSP to run.  With that said, HeliolincRR can be installed like so:
+
+```console
+pip install git+https://github.com/bengebre/heliolincrr
+```
+
+## Example code
+
+The rendered notebook ```HeliolincRR-TNO.ipynb``` in the [examples/]() directory finds TNOs in a two week subset of DP0.3 data.
+
+## Documentation
+
+Documentation for HeliolincRR is available [here]().
+
+## Other HelioLinC implementations
+
+[HelioLinC3D](https://github.com/lsst-dm/heliolinc2), developed first by Siegfried Eggl and now Ari Heinze, is the official Rubin implementation of HelioLinC written in C++ and is already [finding PHAs](https://www.nytimes.com/2023/08/05/science/space-asteroids-rubin-heliolinc3d.html) in survey data.
+
+## Acknowlegements
+
+Developer and maintainer:
+- [Ben Engebreth](https://benengebreth.org/)
+
+Contributors and collaborators:
+- [Siegfried Eggl](https://aerospace.illinois.edu/directory/profile/eggl)
+- [Ari Heinze](https://astro.washington.edu/people/aren-heinze)
+
+HeliolincRR was developed by Ben Engebreth, but would not have been possible without the feedback and support of Siegfried Eggl and Ari Heinze.  Siegfried and Ari did not, however, contribute any errors that may be present.  All errors in this work belong to Ben Engebreth alone.
