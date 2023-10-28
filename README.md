@@ -1,22 +1,22 @@
 # HeliolincRR
 
-HeliolincRR is a HelioLinC variant written in Python.  HelioLinC's initial formulation was published in 2018 (Holman M, Payne M, Blankley P., et al.) and extended in 2020 (Eggl, S., Juric, M., Moeyens, J., et al.) and 2022 (Heinze, A., Eggl, S., Juric, M., et. al).  In early 2022 I implemented a version of HelioLinC that I've been refining ever since.  This code is product of that work.
+HeliolincRR is a HelioLinC variant written in Python.  HelioLinC's initial formulation was published in 2018 ([Holman M., Payne M., Blankley P., et al.](https://iopscience.iop.org/article/10.3847/1538-3881/aad69a)) and extended in 2020 ([Eggl, S., Juric, M., Moeyens, J., et al.](https://ui.adsabs.harvard.edu/abs/2020DPS....5221101E/abstract)) and 2022 ([Heinze, A., Eggl, S., Juric, M., et. al](https://ui.adsabs.harvard.edu/abs/2022DPS....5450404H/abstract)).  In early 2022 I implemented a [version of HelioLinC](https://www.benengebreth.org/dynamic-sky/heliolinc-a-variation-in-6d/) that I've been refining ever since.  This code is product of that work.
 
 All of the above implementations of HelioLinC share three basic traits: 
-1. Projection of observer-relative equatorial coordinate observations to asserted heliocentric positions
+1. Projection of observer-relative observations to asserted heliocentric positions
 2. Propagation of n=2 sized tracklets to a reference epoch (or epochs)
-3. Clustering of tracklets at the reference epoch(s)
+3. Clustering of propagated tracklets at the reference epoch(s)
 
 The 2018 Holman implementation clusters in a 2D angular phase space while the 2020 Eggl and 2022 Heinze implementations cluster position and velocity in 6D cartesian phase space.  All three implementations cluster at a single reference epoch.
 
 ## So what's different about HeliolincRR?
 
 There are three noteworthy conceptual differences in HeliolincRR:
-1. HeliolincRR uses ***two*** reference epochs and the two position vectors at those epochs as the clustering phase space ([why would you do that?](https://www.benengebreth.org/dynamic-sky/heliolinc-rr/))
+1. HeliolincRR uses ***two*** reference epochs and the two position vectors at those epochs as the clustering phase space. ([why would you do that?](https://www.benengebreth.org/dynamic-sky/heliolinc-rr/))
 2. HeliolincRR attempts to find clusters centered around each propagated tracklet (which allows for overlapping clusters and fewer hypothesis tests) rather than finding mutually exclusive clusters in the phase space. ([tell me more]())
 3. HeliolincRR uses a [fast Lambert solver](https://arxiv.org/abs/1403.2705) for orbit estimation from n=2 sized tracklets. ([how does that work?]())
 
-The first two differences have substantially improved object recovery in my testing.  The 3rd difference is mostly about convenience and ease of implementation.  **Run on a two week subset of DP0.3 data, HeliolincRR recovers 99.26% of MBAs and 99.79% of TNOs as pure linkages.**
+The first two have substantially improved object recovery in my testing.  The 3rd is mostly about convenience and ease of implementation.  **Run on a two week subset of DP0.3 data, HeliolincRR recovers 99.26% of MBAs and 99.79% of TNOs as pure linkages.**
 
 ## Installation
 
@@ -36,7 +36,7 @@ Documentation for HeliolincRR is available [here]().
 
 ## Other HelioLinC implementations
 
-[HelioLinC3D](https://github.com/lsst-dm/heliolinc2), developed first by Siegfried Eggl and now Ari Heinze, is the official Rubin implementation of HelioLinC written in C++ and is already [finding PHAs](https://www.nytimes.com/2023/08/05/science/space-asteroids-rubin-heliolinc3d.html) in survey data.
+[HelioLinC3D](https://github.com/lsst-dm/heliolinc2), developed first by Siegfried Eggl and now with Ari Heinze, is the official Rubin implementation of HelioLinC written in C++ and is already [finding PHAs](https://www.nytimes.com/2023/08/05/science/space-asteroids-rubin-heliolinc3d.html) in survey data.
 
 ## Acknowlegements
 
