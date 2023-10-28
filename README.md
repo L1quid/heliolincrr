@@ -12,7 +12,7 @@ The 2018 Holman implementation clusters in a 2D angular phase space while the 20
 ## So what's different about HeliolincRR?
 
 There are three noteworthy conceptual differences in HeliolincRR:
-1. HeliolincRR uses ***two*** reference epochs and the two position vectors at those epochs as the clustering phase space.  This fully specifies the orbit of an object and avoids the mixed units problem of position and velocity in phase space. ([more information here](https://www.benengebreth.org/dynamic-sky/heliolinc-rr/))
+1. HeliolincRR uses ***two*** reference epochs and the two propagated tracklet position vectors at those epochs as the clustering phase space.  This fully specifies the orbit of an object and avoids the mixed units problem of position and velocity in phase space. ([more information here](https://www.benengebreth.org/dynamic-sky/heliolinc-rr/))
 2. HeliolincRR attempts to find clusters centered around each propagated tracklet (which allows for overlapping clusters and fewer hypothesis tests) rather than finding mutually exclusive clusters in the phase space. ([here's a visual explanation]())
 3. HeliolincRR uses a [fast Lambert solver](https://arxiv.org/abs/1403.2705) for orbit estimation from n=2 sized tracklets. ([how does that work?]())
 
