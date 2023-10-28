@@ -11,12 +11,12 @@ The 2018 Holman implementation clusters in a 2D angular phase space while the 20
 
 ## So what's different about HeliolincRR?
 
-There are three noteworthy conceptual differences in HeliolincRR:
-1. HeliolincRR uses ***two*** reference epochs and the two propagated tracklet position vectors (thus Heliolinc**RR**) at those epochs as the clustering phase space.  This both fully specifies the orbit of an object and avoids the mixed units and scale problem from using position and velocity in phase space. ([more information here](https://www.benengebreth.org/dynamic-sky/heliolinc-rr/))
+There are three noteworthy conceptual differences in HeliolincRR compared to the implementations above:
+1. HeliolincRR uses ***two*** reference epochs and the two propagated tracklet position vectors at those epochs as the clustering phase space (thus Heliolinc**RR**).  This both fully specifies the orbit of an object and avoids the mixed units and scale problem from using position and velocity in phase space. ([more information here](https://www.benengebreth.org/dynamic-sky/heliolinc-rr/))
 2. HeliolincRR attempts to find clusters centered around each propagated tracklet (which allows for overlapping clusters and fewer hypothesis tests) rather than finding mutually exclusive clusters in the phase space. ([here's a visual explanation]())
 3. HeliolincRR uses a [fast Lambert solver](https://arxiv.org/abs/1403.2705) for orbit estimation from n=2 sized tracklets. ([how does that work?]())
 
-The first two have substantially improved object recovery in my testing.  The 3rd is mostly about convenience and ease of implementation.  **Run on a two week subset of DP0.3 data, HeliolincRR recovers 99.26% of MBAs and 99.79% of TNOs as pure linkages.**
+The first two have substantially improved object recovery in my testing compared to *my* previous position and velocity phase space implementations.  **On a two week subset of DP0.3 data, HeliolincRR recovers 99.26% of MBAs and 99.79% of TNOs as pure linkages.**  The 3rd point is mostly about convenience and ease of implementation.  
 
 ## Installation
 
