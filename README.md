@@ -20,7 +20,9 @@ The first two have substantially improved object recovery in my testing compared
 
 ## Installation
 
-While HeliolincRR is a generalized implementation for any observer at any location, this initial release was designed to work "out of the box" with the [Vera C. Rubin](https://rubinobservatory.org/) telescope's [DP0.3 simulation data](https://dp0-3.lsst.io/index.html) on the Rubin Science Platform (RSP).  As such, the example code in this repository currently requires access to the RSP to run.  With that said, HeliolincRR can be installed like so:
+While HeliolincRR is a generalized implementation for any observer at any location, this initial release was designed to work "out of the box" with the [Vera C. Rubin](https://rubinobservatory.org/) telescope's [DP0.3 simulation data](https://dp0-3.lsst.io/index.html) on the Rubin Science Platform (RSP).  As such, the example code in this repository currently requires access to the RSP to run.  With that said, the example code should be explanatory for those looking to use HeliolincRR with observations from other observatories.  
+
+HeliolincRR can be installed like so:
 
 ```console
 pip install git+https://github.com/bengebre/heliolincrr
