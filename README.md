@@ -16,7 +16,9 @@ There are three noteworthy conceptual differences in HeliolincRR compared to the
 2. HeliolincRR attempts to find clusters centered around each propagated tracklet (which allows for overlapping clusters and fewer hypothesis tests) rather than finding mutually exclusive clusters in the phase space. ([here's a visual explanation](#f1))
 3. HeliolincRR uses a [fast Lambert solver](https://arxiv.org/abs/1403.2705) for orbit determination of n=2 sized tracklets. ([what's a Lambert solver?](#f2))
 
-The first two have substantially improved object recovery in my testing compared to *my* prior single epoch position and velocity phase space implementations.  **On a two week subset of DP0.3 data, HeliolincRR recovers 99.26% of MBAs and 99.79% of TNOs as pure linkages.**  The 3rd point is mostly about convenience and ease of implementation.  
+The first two differences have substantially improved object recovery in my testing compared to *my* prior single epoch position and velocity phase space implementations.  **On a two week subset of DP0.3 data, HeliolincRR recovers 99.26% of MBAs and 99.79% of TNOs as pure linkages.**  
+
+The 3rd difference is mostly about convenience and ease of implementation.  A Lambert solver can quickly find the orbit (elliptical, parabolic or hyperbolic) that joins two position vectors at two observation times, which is exactly what heliocentric projected tracklets are.
 
 ## Installation
 
@@ -46,6 +48,8 @@ Contributors and collaborators:
 - [Ari Heinze](https://astro.washington.edu/people/aren-heinze)
 
 HeliolincRR was developed by Ben Engebreth, but would not have been possible without the feedback and support of Siegfried Eggl and Ari Heinze.  Siegfried and Ari did not, however, contribute any errors that may be present in HeliolincRR.  All errors in this work belong to Ben Engebreth alone.
+
+HeliolincRR uses [poliastro](https://github.com/poliastro/poliastro) for orbit propagation and a fast (Izzo) Lambert solver implementation.
 
 ## Footnotes
 
