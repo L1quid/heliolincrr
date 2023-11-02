@@ -18,7 +18,7 @@ There are three noteworthy conceptual differences in HeliolincRR compared to the
 
 The first two differences have substantially improved object recovery in my testing compared to *my* prior single epoch position and velocity phase space implementations.  **On a two week subset of DP0.3 data, HeliolincRR recovers 99.26% of MBAs and 99.79% of TNOs as pure linkages.**  
 
-The 3rd difference is mostly about convenience and ease of implementation.  A Lambert solver can quickly find the orbit (elliptical, parabolic or hyperbolic) that joins two position vectors at two observation times, which is exactly what heliocentric projected tracklets are.
+The 3rd difference is mostly about convenience and ease of implementation.  A Lambert solver can quickly find the Keplerian orbit (elliptical, parabolic or hyperbolic) that joins two position vectors at two observation times, which is exactly what heliocentric projected tracklets are.  Noteably, the formulation of Lambert's problem as two position vectors at two observation times uniquely specifying an orbit is what led to the insight of using two position vectors at two reference epochs for the clustering phase space.
 
 ## Installation
 
