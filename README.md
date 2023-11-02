@@ -34,7 +34,7 @@ The rendered notebook ```HeliolincRR-TNO.ipynb``` in the [examples/Rubin-LSST](h
 
 ## Other HelioLinC implementations
 
-[HelioLinC3D](https://github.com/lsst-dm/heliolinc2), developed first by Siegfried Eggl and now Ari Heinze, is the official Rubin implementation of HelioLinC written in C++ and is already [finding PHAs](https://www.nytimes.com/2023/08/05/science/space-asteroids-rubin-heliolinc3d.html) in survey data.
+[Heliolinc3D](https://github.com/lsst-dm/heliolinc2), developed first by Siegfried Eggl and now Ari Heinze, is the official Rubin implementation of HelioLinC written in C++ and is already [finding PHAs](https://www.nytimes.com/2023/08/05/science/space-asteroids-rubin-heliolinc3d.html) in survey data.
 
 ## Acknowlegements
 
