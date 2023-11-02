@@ -49,7 +49,7 @@ HeliolincRR was developed by Ben Engebreth, but would not have been possible wit
 
 ## Footnotes
 
-<a name="f1">1</a>. A mutually exclusive clustering algorithm could reasonably choose the clusters shown in red circles in the left image for this synthetic tracklet phase space.  But both of those clusters contain mixed data (blue in the gold set and gold in the blue set).  Therefore, a pure link cannot be recovered.  However, a clustering algorithm that attempts to form clusters around each tracklet (right image), can find numerous pure clusters with the same clustering radius for the same data.  Green circles indicate pure clusters and red circles indicate impure clusters.
+<a name="f1">1</a>. A mutually exclusive clustering algorithm could reasonably choose the clusters shown in red circles in the left image for this synthetic tracklet phase space.  But both of those clusters contain mixed data (blue in the gold set and gold in the blue set).  Therefore, a pure link cannot be recovered.  However, a clustering algorithm that attempts to form a cluster around each tracklet (right image), can find numerous pure clusters with the same clustering radius for the same data.  Green circles indicate pure clusters and red circles indicate impure clusters.
 
 ![mutually exclusive clusters](https://benengebreth.org/misc/me.png?2)
 ![overlapping clusters](https://benengebreth.org/misc/ol.png?2)
