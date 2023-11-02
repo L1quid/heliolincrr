@@ -16,7 +16,7 @@ There are three noteworthy conceptual differences in HeliolincRR compared to the
 2. HeliolincRR attempts to find clusters centered around each propagated tracklet (which allows for overlapping clusters and fewer hypothesis tests) rather than finding mutually exclusive clusters in the phase space. ([here's a visual explanation](#f1))
 3. HeliolincRR uses a [fast Lambert solver](https://arxiv.org/abs/1403.2705) for orbit estimation from n=2 sized tracklets. ([what's a Lambert solver?](#f2))
 
-The first two have substantially improved object recovery in my testing compared to *my* previous position and velocity phase space implementations.  **On a two week subset of DP0.3 data, HeliolincRR recovers 99.26% of MBAs and 99.79% of TNOs as pure linkages.**  The 3rd point is mostly about convenience and ease of implementation.  
+The first two have substantially improved object recovery in my testing compared to *my* prior single epoch position and velocity phase space implementations.  **On a two week subset of DP0.3 data, HeliolincRR recovers 99.26% of MBAs and 99.79% of TNOs as pure linkages.**  The 3rd point is mostly about convenience and ease of implementation.  
 
 ## Installation
 
