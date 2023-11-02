@@ -1,6 +1,6 @@
 # HeliolincRR
 
-HeliolincRR is a HelioLinC variant written in Python.  HelioLinC's original formulation was published in 2018 ([Holman M., Payne M., Blankley P., et al.](https://iopscience.iop.org/article/10.3847/1538-3881/aad69a)) and extended in 2020 ([Eggl, S., Juric, M., Moeyens, J., et al.](https://ui.adsabs.harvard.edu/abs/2020DPS....5221101E/abstract)) and 2022 ([Heinze, A., Eggl, S., Juric, M., et. al](https://ui.adsabs.harvard.edu/abs/2022DPS....5450404H/abstract)).  In early 2022 I implemented a [version of HelioLinC](https://www.benengebreth.org/dynamic-sky/heliolinc-a-variation-in-6d/) that I've been refining ever since.  This code is product of that work.
+HeliolincRR is a HelioLinC variant for solar system object linking written in Python.  HelioLinC's original formulation was published in 2018 ([Holman M., Payne M., Blankley P., et al.](https://iopscience.iop.org/article/10.3847/1538-3881/aad69a)) and extended in 2020 ([Eggl, S., Juric, M., Moeyens, J., et al.](https://ui.adsabs.harvard.edu/abs/2020DPS....5221101E/abstract)) and 2022 ([Heinze, A., Eggl, S., Juric, M., et. al](https://ui.adsabs.harvard.edu/abs/2022DPS....5450404H/abstract)).  In early 2022 I implemented a [version of HelioLinC](https://www.benengebreth.org/dynamic-sky/heliolinc-a-variation-in-6d/) that I've been refining ever since.  This code is product of that work.
 
 All of the above implementations of HelioLinC share three basic traits: 
 1. Projection of observer-relative observations to asserted heliocentric positions
