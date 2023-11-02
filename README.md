@@ -30,7 +30,7 @@ pip install git+https://github.com/bengebre/heliolincrr
 
 ## Example code
 
-The rendered notebook ```HeliolincRR-TNO.ipynb``` in the [examples/Rubin-LSST]() directory finds TNOs in a two week subset of DP0.3 data.
+The rendered notebook ```HeliolincRR-TNO.ipynb``` in the [examples/Rubin-LSST](https://github.com/bengebre/heliolincrr/tree/main/examples/Rubin-LSST) directory finds TNOs in a two week subset of DP0.3 data.
 
 ## Other HelioLinC implementations
 
