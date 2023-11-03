@@ -26,7 +26,7 @@ except:
 
 class HeliolincRR:
     """
-    HeliolincRR: Python code for solar system object linking.
+    HeliolincRR: Solar system object linking using heliocentric projection and postition vector clustering at two reference epochs
     """
 
     def __init__(self,radecs,jdates,obs_locs):
