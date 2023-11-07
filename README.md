@@ -49,7 +49,9 @@ Contributors and collaborators:
 
 HeliolincRR was developed by Ben Engebreth, but would not have been possible without the feedback and support of Siegfried Eggl and Ari Heinze.  Siegfried and Ari did not, however, contribute any errors that may be present in HeliolincRR.  All errors in this work belong to Ben Engebreth alone.
 
-HeliolincRR uses [poliastro](https://github.com/poliastro/poliastro) for orbit propagation and a fast (Izzo) Lambert solver implementation.
+HeliolincRR uses [poliastro](https://github.com/poliastro/poliastro) for orbit propagation and a fast (Izzo) Lambert solver implementation.  
+
+[DP0.3](https://dp0-3.lsst.io/index.html) is a Data Preview of simulated solar system objects for the [Rubin Observatory's](https://rubinobservatory.org/) [Legacy Survey of Space and Time (LSST)](https://rubinobservatory.org/explore/lsst) created by the [Solar System Science Collaboration](https://lsst-sssc.github.io/).
 
 ## Footnotes
 
