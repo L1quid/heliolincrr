@@ -7,7 +7,7 @@ All of the above implementations of HelioLinC share three basic traits:
 2. Propagation of n=2 sized tracklets to a reference epoch (or epochs)
 3. Clustering of propagated tracklets at the reference epoch(s)
 
-The 2018 Holman implementation clusters in a 4D parameterization of angular phase space while the 2020 Eggl and 2022 Heinze implementations cluster position and velocity in 6D cartesian phase space.  All three implementations cluster at a single reference epoch.
+The 2018 Holman implementation clusters in a 4D parameterized angular phase space while the 2020 Eggl and 2022 Heinze implementations cluster position and velocity in 6D cartesian phase space.  All three implementations cluster at a single reference epoch.
 
 ## So what's different about HeliolincRR?
 
