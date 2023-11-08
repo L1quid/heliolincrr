@@ -16,7 +16,7 @@ There are three noteworthy conceptual differences in HeliolincRR compared to the
 2. HeliolincRR attempts to find clusters centered around each propagated tracklet (which allows any single tracklet to belong to multiple clusters per hypothesis) rather than finding only mutually exclusive clusters in each hypothesis tested. ([here's a visual explanation](#f1))
 3. HeliolincRR uses a [fast Lambert solver](https://arxiv.org/abs/1403.2705) for orbit determination of n=2 sized tracklets. ([what's a Lambert solver?](#f2))
 
-The first two differences have substantially improved object recovery in my testing compared to *my* prior single epoch position and velocity phase space implementations.  **HeliolincRR recovers 99.26% of MBAs and 99.79% of TNOs as pure linkages from the set of *all* solar system objects in the DP0.3 data for an arbitrary two week interval.**  
+The first two differences have substantially improved object recovery in my testing compared to *my* prior single epoch position and velocity phase space implementation.  **HeliolincRR recovers 99.26% of MBAs and 99.79% of TNOs as pure linkages from the set of *all* solar system objects in the DP0.3 data for an arbitrary two week interval.**  
 
 The 3rd difference is mostly about convenience and ease of implementation.  A Lambert solver can quickly find the Keplerian orbit (elliptical, parabolic or hyperbolic) that joins two position vectors at two observation times, which is exactly what heliocentric projected tracklets are.  Noteably, the formulation of Lambert's problem as two position vectors at two observation times uniquely specifying an orbit is what led to the insight of using two position vectors at two reference epochs for the clustering phase space.
 
