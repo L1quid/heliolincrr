@@ -13,7 +13,7 @@ The 2018 Holman implementation clusters in a 4D parameterized angular phase spac
 
 There are three noteworthy conceptual differences in HeliolincRR compared to the implementations above:
 1. HeliolincRR uses ***two*** reference epochs and the two propagated tracklet position vectors at those epochs as the clustering phase space (thus Heliolinc**RR**).  This both fully specifies the orbit of an object and avoids the mixed units and scale problem from using position and velocity in phase space. ([more information here](https://www.benengebreth.org/dynamic-sky/heliolinc-rr/))
-2. HeliolincRR attempts to find clusters centered around each propagated tracklet (which allows any single tracklet to belong to multiple clusters per hypothesis test) rather than finding only mutually exclusive clusters in the phase space. ([here's a visual explanation](#f1))
+2. HeliolincRR attempts to find clusters centered around each propagated tracklet (which allows any single tracklet to belong to multiple clusters per hypothesis) rather than finding only mutually exclusive clusters in each hypothesis tested. ([here's a visual explanation](#f1))
 3. HeliolincRR uses a [fast Lambert solver](https://arxiv.org/abs/1403.2705) for orbit determination of n=2 sized tracklets. ([what's a Lambert solver?](#f2))
 
 The first two differences have substantially improved object recovery in my testing compared to *my* prior single epoch position and velocity phase space implementations.  **HeliolincRR recovers 99.26% of MBAs and 99.79% of TNOs as pure linkages from the set of *all* solar system objects in the DP0.3 data for an arbitrary two week interval.**  
