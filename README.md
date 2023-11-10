@@ -47,7 +47,7 @@ Contributors and collaborators:
 - [Siegfried Eggl](https://aerospace.illinois.edu/directory/profile/eggl)
 - [Ari Heinze](https://astro.washington.edu/people/aren-heinze)
 
-HeliolincRR was developed by Ben Engebreth, but would not have been possible without the feedback and support of Siegfried Eggl and Ari Heinze.  Siegfried and Ari did not, however, contribute any errors that may be present in HeliolincRR.  All errors in this work belong to Ben Engebreth alone.
+HeliolincRR was developed by Ben Engebreth, but would likely not exist in its present form without the contributions of Siegfried Eggl and Ari Heinze.  Siegfried and Ari did not, however, contribute any errors that may be present in HeliolincRR.  All errors in this work belong to Ben Engebreth alone.
 
 HeliolincRR uses [poliastro](https://github.com/poliastro/poliastro) for orbit propagation and a fast (Izzo) Lambert solver implementation.  
 
