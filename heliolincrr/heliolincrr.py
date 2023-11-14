@@ -417,6 +417,9 @@ class HeliolincRR:
         if exists(f):
             return f
 
+        #count times propagated tracklet exceeds max_v 
+        max_v_count = 0
+
         #log
         if log:
             logger = self.get_logger('propagator')
@@ -512,9 +515,13 @@ class HeliolincRR:
                 elif log:
                     msg = "NAN in propagated state - H:({:.2f},{:.5f},{:.8f}) T:{:d}/{:d}".format(r,rdot,rdotdot,i,num_tracklets)
                     logger.debug(msg)
-            elif log:
-                msg = "Propagated velocity greater than max_v - H:({:.2f},{:.5f},{:.8f}) T:{:d}/{:d}".format(r,rdot,rdotdot,i,num_tracklets)
-                logger.debug(msg)
+            else:
+                max_v_count+=1
+
+        #log how many times propagated velocity exceeded max_v
+        if log:
+            msg = "Propagated velocity greater than max_v {:d} times - H:({:.2f},{:.5f},{:.8f}) T:{:d}/{:d}".format(max_v_count,r,rdot,rdotdot,num_tracklets,num_tracklets)
+            logger.debug(msg)
 
 
         #return data to file
