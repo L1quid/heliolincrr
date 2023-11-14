@@ -412,7 +412,7 @@ class HeliolincRR:
         r,rdot,rdotdot = hypo
 
         #if file exists we already calculated this
-        file_params = ('c'+str(len(self.combs)),r,rdot,rdotdot,max_v,min_init_earth_au)
+        file_params = ('c'+str(len(self.combs)),) + tuple(np.round(np.array((r,rdot,rdotdot,max_v,min_init_earth_au),dtype=float),8))
         f = "_".join(map(str, file_params)) + '.pkl'
         if exists(f):
             return f
@@ -506,8 +506,16 @@ class HeliolincRR:
                     prv = np.reshape(np.transpose(propagate(orb, timedelta_vector, rtol=1e-4).xyz.to(u.AU).value),(1,6))[0].tolist()
 
                 #prvs.append(list(np.concatenate((o0.r.to(u.AU).value,o1.r.to(u.AU).value)))) #for method 1
-                prvs.append(prv) #for method 2
-                pcids.append(c)
+                if ~np.any(np.isnan(prv)):
+                    prvs.append(prv) #for method 2
+                    pcids.append(c)
+                elif log:
+                    msg = "NAN in propagated state - H:({:.2f},{:.5f},{:.8f}) T:{:d}/{:d}".format(r,rdot,rdotdot,i,num_tracklets)
+                    logger.debug(msg)
+            elif log:
+                msg = "Propagated velocity greater than max_v - H:({:.2f},{:.5f},{:.8f}) T:{:d}/{:d}".format(r,rdot,rdotdot,i,num_tracklets)
+                logger.debug(msg)
+
 
         #return data to file
         prvs = np.array(prvs)
