@@ -17,5 +17,6 @@ setuptools.setup(
 	'astropy>=4.2.1',
 	'scikit-learn>=0.24.1',
 	'poliastro @ git+https://github.com/poliastro/poliastro.git@55e96432b27301c5dffb4ef6b4f383d970c6e9c0',
-	'tqdm>=4.59.0']
+	'tqdm>=4.59.0',
+    	'cupy>=12.2.0']
 )
