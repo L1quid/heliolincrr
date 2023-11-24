@@ -1,4 +1,5 @@
 import numpy as np
+import cupy as cp
 import pandas as pd
 import pickle
 import shutil
@@ -202,7 +203,7 @@ class HeliolincRR:
                 #seps_calc = np.arccos(np.clip(np.dot(self.r_ob_unit[combo_idx,:],self.r_ob_unit[bbf_id,:]),-1,1)) #rad (faster)
 
                 #try except to avoid np.clip() [fastest yet!]
-                dot = np.dot(self.r_ob_unit[combo_idx,:],self.r_ob_unit[bbf_id,:])
+                dot = cp.dot(self.r_ob_unit[combo_idx,:],self.r_ob_unit[bbf_id,:])
                 try:
                     seps_calc = np.arccos(dot)
                 except FloatingPointError as e:
