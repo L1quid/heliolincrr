@@ -53,7 +53,7 @@ class HeliolincRR:
             raise Exception("Observations must be sorted chronologically in ascending order")
 
         #instance variables
-        self.bbf = None 
+        self.bbf = None
         self.r_ob_unit = None
         self.combs = None
         self.hypos = None
@@ -66,19 +66,19 @@ class HeliolincRR:
         df.drop_duplicates(inplace=True)
 
         #unique observation times [was 'times']
-        self.utimes = np.array(df['times'])
+        self.utimes = cp.array(df['times'])
 
         #sun->observer vectors
-        self.r_so = np.array(df[['sun_obs_x','sun_obs_y','sun_obs_z']])
+        self.r_so = cp.array(df[['sun_obs_x','sun_obs_y','sun_obs_z']])
 
         #dict for frame numnber lookup
-        utimes_fnums = dict(zip(self.utimes,np.arange(0,len(self.utimes))))
+        utimes_fnums = dict(zip(self.utimes,cp.arange(0,len(self.utimes))))
 
         #create blobs by frame
         bbf_df = pd.DataFrame(radecs,columns=['ra','dec'])
-        bbf_df['bbf_ids'] = np.arange(0,len(jdates))
+        bbf_df['bbf_ids'] = cp.arange(0,len(jdates))
         bbf_df['fnums'] = [utimes_fnums[t] for t in jdates]
-        self.bbf = np.array(bbf_df)
+        self.bbf = cp.array(bbf_df)
 
         #unit vectors pointing from observer to observation [equitorial]
         self.r_ob_unit = self.eq2cart(self.bbf[:,0],self.bbf[:,1],1)[0]
@@ -87,12 +87,12 @@ class HeliolincRR:
     @staticmethod
     def eq2cart(ra,dec,d=1):
         """
-        Convert equitorial spherical coordinates of right ascension and declination to both 
+        Convert equitorial spherical coordinates of right ascension and declination to both
         equitorial and ecliptic cartesian coordinates with a user-defined magnitude.
 
         Parameters
         ----------
-        ra : float or array-like 
+        ra : float or array-like
             Right ascension in degrees.
         dec : float or array-like
             Declination in degrees.
@@ -132,7 +132,7 @@ class HeliolincRR:
         ----------
         dts : list or tuple (float, float)
             Minimum and maximum time intervals in days for tracklet formation.
-            
+
         dpds : list or tuple (float, float)
             Minimum and maximum observer relative rates of motion on the sky for tracklet formation.
 
@@ -188,8 +188,8 @@ class HeliolincRR:
                     #if use_mags: [for mag checks]
                     #    combo_bool = combo_bool & mag_bools[rmags[bbf_id]]
 
-                    any_combos = np.any(combo_bool)
-                    combo_idx = np.where(combo_bool)[0]
+                    any_combos = cp.any(combo_bool)
+                    combo_idx = cp.where(combo_bool)[0]
 
                 if ~any_combos:
                     continue
@@ -240,7 +240,7 @@ class HeliolincRR:
         Returns
         -------
         v : arbitrary
-            Returns data stored to specified file. 
+            Returns data stored to specified file.
         """
 
         f = open(fname,'rb')
@@ -274,7 +274,7 @@ class HeliolincRR:
     @staticmethod
     def geod2heliod(r_so,r_ob,d):
         """
-        Return the multiplier for the observer relative unit vector that scales it to 
+        Return the multiplier for the observer relative unit vector that scales it to
         a helioentric vector of length 'd'.
 
         Parameters
@@ -332,7 +332,7 @@ class HeliolincRR:
 
     def propagate(self,hypos,epochs,cores,max_v=1000,min_init_earth_au=0.1,log=True):
         """
-        Multithreading wrapper to Lambert solve (initial orbit determination) all tracklets for all user-defined range hypothesis 
+        Multithreading wrapper to Lambert solve (initial orbit determination) all tracklets for all user-defined range hypothesis
         and then propagate to two user-defined reference epochs.  Calls propagator().
 
         Parameters
@@ -382,7 +382,7 @@ class HeliolincRR:
 
     def propagator(self,hypo,epochs,max_v,min_init_earth_au,log):
         """
-        Lambert solve (initial orbit determination) all tracklets using a user-defined range hypothesis 
+        Lambert solve (initial orbit determination) all tracklets using a user-defined range hypothesis
         and then propagate to two user-defined reference epochs.
 
         Parameters
@@ -418,7 +418,7 @@ class HeliolincRR:
         if exists(f):
             return f
 
-        #count times propagated tracklet exceeds max_v 
+        #count times propagated tracklet exceeds max_v
         max_v_count = 0
 
         #log
@@ -684,7 +684,7 @@ class HeliolincRR:
         #use data from file (overriding input drvs/combs)
         if fname:
             #fresults = self.pload(fname)
-            drvs_clust, orbs, combs, hypo = self.pload(fname) 
+            drvs_clust, orbs, combs, hypo = self.pload(fname)
             #drvs_clust = fresults[0]
             #combs = fresults[2]
             #hypo = fresults[3]
